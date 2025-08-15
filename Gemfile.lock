@@ -1,0 +1,38 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    concurrent-ruby (1.3.5)
+    diff-lcs (1.6.2)
+    faker (3.5.2)
+      i18n (>= 1.8.11, < 2)
+    i18n (1.14.7)
+      concurrent-ruby (~> 1.0)
+    mini_portile2 (2.8.9)
+    rspec (3.13.1)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.5)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.5)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.5)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.4)
+    sqlite3 (2.7.3)
+      mini_portile2 (~> 2.8.0)
+    sqlite3 (2.7.3-arm64-darwin)
+
+PLATFORMS
+  arm64-darwin-22
+  ruby
+
+DEPENDENCIES
+  faker
+  rspec
+  sqlite3
+
+BUNDLED WITH
+   2.7.1
