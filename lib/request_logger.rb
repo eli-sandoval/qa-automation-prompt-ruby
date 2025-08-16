@@ -7,7 +7,7 @@ class RequestLogger
     VALUES (?, ?, ?, ?)
   SQL
 
-  # Logs a single API request to the database
+  # Logs a single request to the database
   def self.log(url, name_parameter, status, response)
     db = Database.instance
     db.execute(INSERT_SQL, [url, name_parameter, status, response])

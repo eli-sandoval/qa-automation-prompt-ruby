@@ -15,7 +15,6 @@ class ApiMonitor
         warn "Failed to send request for #{name}: #{e.message}"
       end
 
-      # Sleep between requests, configurable desde AppConfig
       sleep(interval)
 
       break if Time.now - start_time > duration

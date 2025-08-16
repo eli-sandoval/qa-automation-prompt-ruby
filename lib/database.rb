@@ -24,7 +24,7 @@ class Database
     raise "DB initialization failed: #{e.message}"
   end
 
-  # Execute an arbitrary query with optional parameters
+  # Execute query with optional parameters
   def execute(query, params = [])
     @connection.execute(query, params)
   end
