@@ -2,6 +2,7 @@
 
 This project provides the QA automation prompt challenge implemented in Ruby with a focus on scalability,
 maintainability, and clean structure.
+The project is also leveraging CI/CD by running the build and the scripts through GitHub Actions with each Push and Pull Request. Please browse the Actions tab for further reference.
 
 ## Prerequisites
 
