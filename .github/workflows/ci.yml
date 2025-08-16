@@ -1,0 +1,38 @@
+name: Ruby CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - uses: actions/checkout@v3
+
+      # Set up Ruby
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      # Install SQLite3
+      - name: Install SQLite3
+        run: sudo apt-get update && sudo apt-get install -y sqlite3
+
+      # Install project dependencies
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      # Run scripts with make
+      - name: Run Makefile target
+        run: |
+          make monitor DURATION=60 INTERVAL=4
+          make uptime
+          make format_issue_test
