@@ -142,3 +142,11 @@ The project includes a `Makefile` to simplify execution.
 ## Notes
 
 - Ensure you are in the root folder of the project before running `make` commands.
+- Windows is a bit stubborn. So if you run into issues executing the make commands, add "bundle exec" at the beginning.
+  The commands will look like:
+   ```bash
+   bundle exec make monitor
+   ```
+   ```bash
+   bundle exec make monitor DURATION=20 INTERVAL=1
+   ```
