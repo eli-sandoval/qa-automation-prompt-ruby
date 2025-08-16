@@ -1,21 +1,21 @@
-.PHONY: monitor calculate_uptime monitor_and_uptime format_issue_test test clean
+.PHONY: monitor uptime monitor_and_uptime format_issue_test test clean
 
 # Run the main monitor script (initialize DB, monitor API)
 monitor:
-	ruby run_monitor.rb
+	ruby runners/run_monitor.rb $(DURATION) $(INTERVAL)
 
 # Calculate uptime based on DB logs
-calculate_uptime:
-	ruby run_uptime_calculator.rb
+uptime:
+	ruby runners/run_uptime_calculator.rb
 
 # Monitor and calculate uptime based on DB logs
 monitor_and_uptime:
-	ruby run_monitor.rb
-	ruby run_uptime_calculator.rb
+	@$(MAKE) monitor DURATION=$(DURATION) INTERVAL=$(INTERVAL)
+	ruby runners/run_uptime_calculator.rb
 
 # Run the name formatting issue test (pp string)
 format_issue_test:
-	ruby run_pp_bug.rb
+	ruby runners/run_pp_bug.rb
 
 test:
 	rspec

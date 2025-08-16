@@ -1,5 +1,5 @@
-require_relative 'lib/uptime_calculator'
-require_relative 'lib/database'
+require_relative '../lib/uptime_calculator'
+require_relative '../lib/database'
 
 Database.instance.initialize_schema
 puts "[INFO] Database initialized."

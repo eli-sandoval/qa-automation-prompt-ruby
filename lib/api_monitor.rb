@@ -3,7 +3,7 @@ require_relative 'api_client'
 require_relative 'app_config'
 
 class ApiMonitor
-  def self.start_monitoring
+  def self.start_monitoring(duration: AppConfig::MONITOR_DURATION_SEC, interval: AppConfig::MONITOR_INTERVAL_SEC)
     faker = Faker::Name
     start_time = Time.now
 
@@ -16,9 +16,9 @@ class ApiMonitor
       end
 
       # Sleep between requests, configurable desde AppConfig
-      sleep(AppConfig::MONITOR_INTERVAL_SEC)
+      sleep(interval)
 
-      break if Time.now - start_time > AppConfig::MONITOR_DURATION_SEC
+      break if Time.now - start_time > duration
     end
 
     puts "Monitoring finished."
