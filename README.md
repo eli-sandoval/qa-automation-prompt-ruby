@@ -150,3 +150,19 @@ The project includes a `Makefile` to simplify execution.
    ```bash
    bundle exec make monitor DURATION=20 INTERVAL=1
    ```
+
+## Results
+
+It is mentioned in the instructions that there is a bug related to the format of names on the API. The findings are:
+
+Bug occurs when the string used for the name field includes two lower-case p characters. Regardless of order or proximity.
+Meaning that the string "pp" will fail while "PP" will succeed. "apple", "people" or any string that contains two "p" characters will also fail.
+Execute the following command to reproduce the issue consistently:
+
+   ```bash
+   make format_issue_test
+   ```
+
+As for the API uptime, based on a 10-minute monitor duration and a 2 second interval, the % of uptime is: 90.42.
+
+It's important to note that with a 10-minute monitor duration and a 5 second interval, the uptime result was 66,67%.
